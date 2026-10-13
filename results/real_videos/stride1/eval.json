@@ -1,0 +1,132 @@
+{
+  "detector": "CoreML ppe_yolov8n.onnx",
+  "stride": 1,
+  "clips": [
+    {
+      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_night_roadwork_jp.mp4",
+      "provider": null,
+      "license": null,
+      "scene": null,
+      "helmets_expected": "unknown",
+      "frames_processed": 373,
+      "stride": 1,
+      "detect_ms_median": 11.2,
+      "unique_persons": 7,
+      "unique_violators": 3,
+      "alerts": 4,
+      "frames_with_people_pct": 100.0,
+      "frames_with_violation_pct": 62.5,
+      "first_alerts": [
+        {
+          "t": 2.87,
+          "track": 1,
+          "label": "no_helmet"
+        },
+        {
+          "t": 8.81,
+          "track": 1,
+          "label": "no_helmet"
+        },
+        {
+          "t": 10.74,
+          "track": 5,
+          "label": "no_helmet"
+        },
+        {
+          "t": 11.08,
+          "track": 6,
+          "label": "no_helmet"
+        }
+      ]
+    },
+    {
+      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_crane_crew_close.mp4",
+      "provider": null,
+      "license": null,
+      "scene": null,
+      "helmets_expected": "unknown",
+      "frames_processed": 363,
+      "stride": 1,
+      "detect_ms_median": 10.4,
+      "unique_persons": 10,
+      "unique_violators": 3,
+      "alerts": 3,
+      "frames_with_people_pct": 100.0,
+      "frames_with_violation_pct": 22.3,
+      "first_alerts": [
+        {
+          "t": 1.17,
+          "track": 2,
+          "label": "no_helmet"
+        },
+        {
+          "t": 2.1,
+          "track": 3,
+          "label": "no_helmet"
+        },
+        {
+          "t": 2.8,
+          "track": 9,
+          "label": "no_helmet"
+        }
+      ]
+    },
+    {
+      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_road_work_us_lowres.mp4",
+      "provider": null,
+      "license": null,
+      "scene": null,
+      "helmets_expected": "unknown",
+      "frames_processed": 1600,
+      "stride": 1,
+      "detect_ms_median": 9.5,
+      "unique_persons": 10,
+      "unique_violators": 5,
+      "alerts": 8,
+      "frames_with_people_pct": 61.4,
+      "frames_with_violation_pct": 22.9,
+      "first_alerts": [
+        {
+          "t": 7.47,
+          "track": 1,
+          "label": "no_helmet"
+        },
+        {
+          "t": 12.48,
+          "track": 1,
+          "label": "no_helmet"
+        },
+        {
+          "t": 17.48,
+          "track": 1,
+          "label": "no_helmet"
+        },
+        {
+          "t": 20.65,
+          "track": 4,
+          "label": "no_helmet"
+        },
+        {
+          "t": 23.16,
+          "track": 1,
+          "label": "no_helmet"
+        },
+        {
+          "t": 23.72,
+          "track": 5,
+          "label": "no_helmet"
+        },
+        {
+          "t": 26.09,
+          "track": 7,
+          "label": "no_helmet"
+        },
+        {
+          "t": 33.13,
+          "track": 8,
+          "label": "no_helmet"
+        }
+      ]
+    }
+  ]
+}

@@ -14,7 +14,7 @@
   const MAXW = 640, QUAL = 0.7, DEPTH = 2;
 
   let stream = null, running = false, abort = null;
-  let inflight = 0, encoding = false, seq = 0, applied = 0, sentW = 0, sentH = 0;
+  let gen = 0, lastTick = 0, inflight = 0, encoding = false, seq = 0, applied = 0, sentW = 0, sentH = 0;
   let mirror = store.get('mirror') !== '0';
   let status = null, retryAt = 0, notReady = false;
   const done = [];            // timestamps of completed responses
@@ -76,7 +76,7 @@
   function begin() {            // shared: reset loop state and start capture + render
     if (window.setMjpeg) window.setMjpeg(false);
     items = []; done.length = 0; rtt = srvMs = banner = null; inflight = 0; encoding = false; seq = applied = 0; notReady = false; lastResp = 0; sentW = sentH = 0;
-    abort = new AbortController(); running = true;
+    gen++; abort = new AbortController(); running = true;
     loadStatus(); layout(); render(); schedule();
   }
   async function start(deviceId) {
@@ -110,13 +110,15 @@
     if (!Array.isArray(clips)) clips = [];
     return clips;
   }
+  const ttl = c => String(c.title || c.file || '').replace(/\.(webm|ogv|ogg|mp4|mov)$/i, '');
   const dur = d => d ? Math.floor(d / 60) + ':' + String(Math.round(d % 60)).padStart(2, '0') : '';
   function renderMenu() {
     const box = $('clipList');
     if (!clips.length) { box.innerHTML = '<div class="none">No recorded clips available yet (data/videos/manifest.json is missing or empty).</div>'; return; }
     box.innerHTML = clips.map((c, i) => {
-      const h = c.helmets == null ? '' : (String(c.helmets).match(/^(no|none|false|0)$/i) ? '<span class="nh">no helmets</span>' : '<span class="h">helmets: ' + esc(c.helmets) + '</span>');
-      return `<button type="button" class="clip${i === clipIdx && mode === 'file' ? ' cur' : ''}" data-i="${i}"><b>${esc(c.title || c.file)}</b><span class="d">${esc(dur(c.duration_s))}</span>` +
+      const hs = c.helmets == null ? '' : String(c.helmets), cls = /^(no\b|none|false|0$)/i.test(hs) ? 'nh' : /^(all|yes|true)\b/i.test(hs) ? 'h' : 'hm';
+      const h = hs ? '<span class="' + cls + '">helmets: ' + esc(hs) + '</span>' : '';
+      return `<button type="button" class="clip${i === clipIdx && mode === 'file' ? ' cur' : ''}" data-i="${i}"><b>${esc(ttl(c))}</b><span class="d">${esc(dur(c.duration_s))}</span>` +
         `<span class="m">${[esc(c.provider), esc(c.license), c.scene ? esc(c.scene) : '', h].filter(Boolean).join(' &middot; ')}</span></button>`;
     }).join('');
     box.querySelectorAll('.clip').forEach(b => { b.onclick = () => playClip(+b.dataset.i); });
@@ -186,9 +188,11 @@
     if (!running) return;
     if (cam.requestVideoFrameCallback) cam.requestVideoFrameCallback(tick); else setTimeout(() => tick(), 33);
   }
-  function tick() {
+  setInterval(() => { if (running && performance.now() - lastTick > 1000) tick(true); }, 1000);   // watchdog: rVFC can stall after a source switch
+  function tick(kick) {
     if (!running) return;
-    schedule();
+    lastTick = performance.now();
+    if (kick !== true) schedule();                       // watchdog kicks capture once without forking the rVFC chain
     if (cam.readyState < 2 || !cam.videoWidth) return;
     if (inflight + (encoding ? 1 : 0) >= DEPTH || encoding) return;   // drop frame instead of queueing
     if (performance.now() < retryAt) return;
@@ -196,10 +200,10 @@
     const w = Math.round(vw * sc), h = Math.round(vh * sc);
     if (off.width !== w || off.height !== h) { off.width = w; off.height = h; }
     octx.drawImage(cam, 0, 0, w, h);
-    encoding = true; const my = ++seq;
+    encoding = true; const my = ++seq, g = gen;
     off.toBlob(blob => {
       encoding = false;
-      if (!blob || !running) return;
+      if (!blob || !running || g !== gen) return;          // frame from a previous clip/camera: never mix sessions
       send(blob, my, w, h);
     }, 'image/jpeg', QUAL);
   }
@@ -339,7 +343,7 @@
     const fps = done.length > 1 ? (done.length - 1) / ((done[done.length - 1] - done[0]) / 1000) : null;
     const stale = lastResp && now - lastResp > 2500;
     const clip = mode === 'file' ? clips[clipIdx] || {} : null;
-    const head = clip ? '<span class="chip rec" title="' + esc(clip.title || clip.file) + '"><span class="live demo"><i></i>RECORDED VIDEO &middot; ' + esc(clip.title || clip.file) + '</span></span>'
+    const head = clip ? '<span class="chip rec" title="' + esc(ttl(clip)) + '"><span class="live demo"><i></i>RECORDED VIDEO &middot; ' + esc(ttl(clip)) + '</span></span>'
       : '<span class="chip live"><span class="live on"><i></i>LIVE CAMERA</span></span>';
     const html = head + (frozen ? '<span class="chip paused">PAUSED</span>' : '') +
       '<span class="chip">' + (fps != null && !stale && !frozen ? fps.toFixed(1) + ' FPS' : '-- FPS') + '</span>' +

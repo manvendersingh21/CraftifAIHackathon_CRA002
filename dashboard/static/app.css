@@ -247,7 +247,7 @@ body.camlive .hud,body.camlive .camctl .btn,body.camlive .hud-live .chip{backgro
 .clip b{font-weight:600;font-size:.9em;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .clip .d{font-family:var(--mono);font-size:.72em;color:var(--mut);text-align:right}
 .clip .m{grid-column:1/-1;font-size:.72em;color:var(--dim)}
-.clip .m .h{color:var(--grn)}.clip .m .nh{color:var(--red)}
+.clip .m .h{color:var(--grn)}.clip .m .nh{color:var(--red)}.clip .m .hm{color:var(--acc)}
 .clips .none{padding:1.2em;color:var(--mut);font-size:.85em}
 .vframe.menuopen .waiting{visibility:hidden}
 /* while a source is running: controls sit bottom-right above the resolution chip, attribution bottom-left above the backend chip — no overlap at any width */
