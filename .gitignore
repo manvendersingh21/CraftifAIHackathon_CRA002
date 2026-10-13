@@ -1,0 +1,28 @@
+# environments / caches
+.venv/
+__pycache__/
+.pytest_cache/
+.DS_Store
+runs/
+
+# downloadable inputs (see data/get_dataset.sh and data/videos/manifest.json)
+data/construction-ppe/
+data/construction-ppe-subset/
+data/*.zip
+data/videos/*.mp4
+yolov8n.pt
+yolov8s.pt
+
+# synthetic slideshow clip: never used for results (hackathon rule: no simulations)
+samples/*.mp4
+samples/make_sample.py
+
+# run artefacts
+results/*.mp4
+results/*.log
+results/live_*
+*.engine
+ds_output.mp4
+output.mp4
+demo_output.mp4
+train.log

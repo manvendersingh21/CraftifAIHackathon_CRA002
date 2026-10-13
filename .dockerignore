@@ -1,0 +1,11 @@
+.venv
+data
+runs
+__pycache__
+.pytest_cache
+models_n50
+weights
+*.pt
+results
+train.log
+*.engine

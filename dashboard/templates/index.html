@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="color-scheme" content="dark">
+<title>Workplace Safety Sentinel</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%23111'/%3E%3Cpath d='M6 20a10 10 0 0 1 20 0z' fill='%23ffb000'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="/static/app.css">
+</head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="flash" id="flash" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="brand">
+    <svg class="logo" viewBox="0 0 32 32" aria-hidden="true"><path d="M5 21a11 11 0 0 1 22 0z" fill="var(--acc)"/><rect x="3" y="21" width="26" height="3.5" rx="1.75" fill="var(--acc)" opacity=".55"/></svg>
+    <div><h1>Workplace Safety Sentinel</h1><p class="sub">Edge PPE compliance &middot; hard-hat detection</p></div>
+  </div>
+  <div class="top-r">
+    <div class="pill" id="conn" role="status" aria-live="polite"><i></i><span id="ctext">Connecting</span></div>
+    <button class="btn" id="btnSound" aria-pressed="false" title="Enable alert sound"><span id="soundTxt">Sound off</span></button>
+    <button class="btn" id="btnHow" aria-expanded="false" aria-controls="drawer">How it works</button>
+    <button class="btn" id="btnPres" aria-pressed="false" title="Presentation mode (P)">Present <kbd>P</kbd></button>
+    <button class="btn" id="btnFs" title="Fullscreen (F)">Fullscreen <kbd>F</kbd></button>
+    <button class="btn danger" id="btnReset" title="Clear counters and incidents">Reset</button>
+  </div>
+</header>
+
+<main class="grid">
+  <section class="panel hero" aria-label="Live video">
+    <div class="vframe" id="vframe">
+      <img id="video" alt="Live annotated camera feed" decoding="async">
+      <video id="cam" muted playsinline autoplay></video>
+      <canvas id="ov" aria-hidden="true"></canvas>
+      <div class="waiting" id="waiting"><div class="radar"></div><b>Waiting for camera feed</b><span>Start the inference process to stream annotated frames</span>
+        <div class="ctas"><button class="cta" id="ctaLive" type="button"><i></i>Go live &mdash; use camera</button><button class="cta alt" id="ctaFiles" type="button">Test on real footage</button></div><span class="ctahint">Your browser camera (<kbd>C</kbd>) or a real recorded clip (<kbd>V</kbd>) becomes the detector input</span></div>
+      <div class="banner" id="banner" role="alert" aria-live="assertive"></div>
+      <div class="camerr" id="camErr" role="alert" hidden><span id="camErrTxt"></span><button class="btn" id="camErrX" type="button">Dismiss</button></div>
+      <div class="camctl" id="camCtl">
+        <button class="btn go" id="btnCam" type="button" title="Toggle browser camera (C)"><span id="camTxt">Go live &mdash; use camera</span> <kbd>C</kbd></button>
+        <button class="btn" id="btnFiles" type="button" title="Run the detector on real recorded footage (V cycles clips)" aria-haspopup="dialog" aria-expanded="false">Real footage <kbd>V</kbd></button>
+        <button class="btn" id="btnPlay" type="button" hidden>Pause</button>
+        <button class="btn" id="btnNext" type="button" hidden>Next clip</button>
+        <button class="btn" id="btnLoop" type="button" aria-pressed="false" hidden>Loop</button>
+        <select class="btn" id="camSel" aria-label="Camera" hidden></select>
+        <button class="btn" id="btnMirror" type="button" aria-pressed="true" hidden>Mirror</button>
+      </div>
+      <i class="br tl"></i><i class="br tr"></i><i class="br bl"></i><i class="br brr"></i>
+      <div class="scan" aria-hidden="true"></div>
+      <div class="hud hud-tl"><span class="live" id="liveBadge"><i></i><span id="liveTxt">OFFLINE</span></span></div>
+      <div class="hud hud-tr mono"><span id="hFps">-- FPS</span></div>
+      <div class="hud hud-bl mono" id="hMeta"></div>
+      <div class="hud hud-live mono" id="hudLive" hidden></div>
+      <div class="hud hud-lb mono" id="hudLb" hidden></div>
+      <div class="hud hud-res mono" id="hudRes" hidden></div>
+      <div class="hud hud-attr" id="hudAttr" hidden></div>
+      <div class="clipmenu" id="clipMenu" role="dialog" aria-label="Real recorded footage" hidden>
+        <header><b>Real recorded footage</b><span>Downloaded clips with source and license. Each one runs through the same live detector as the camera.</span></header>
+        <div class="clips" id="clipList"></div>
+      </div>
+      <div class="hud hud-br mono" id="hRes"></div>
+    </div>
+  </section>
+
+  <section class="panel twin" aria-label="3D digital twin">
+    <header class="ph"><h2>Digital twin</h2><span class="tag mono" id="twinTag">WebGL</span></header>
+    <div class="twin-wrap" id="twinWrap">
+      <canvas id="twinCanvas" aria-label="3D site view of tracked people. Violations are shown in red."></canvas>
+      <div class="twin-empty" id="twinEmpty">No tracked people yet</div>
+      <div class="twin-legend mono"><span><i class="g"></i>hat on</span><span><i class="r"></i>violation</span><span id="twinCount">0 tracked</span></div>
+    </div>
+  </section>
+
+  <section class="kpis" aria-label="Key metrics">
+    <article class="panel kpi"><span class="lbl">Persons seen</span><b class="num" id="kPers" data-v="0">0</b><span class="foot">unique track ids</span></article>
+    <article class="panel kpi red"><span class="lbl">Unique violators</span><b class="num" id="kViol" data-v="0">0</b><span class="foot">distinct people without hard hat</span></article>
+    <article class="panel kpi red"><span class="lbl">Incidents</span><b class="num" id="kInc" data-v="0">0</b><span class="foot">alerts raised (10 s cooldown)</span></article>
+    <article class="panel kpi gauge">
+      <div class="ring">
+        <svg viewBox="0 0 120 120" aria-hidden="true"><circle class="rt" cx="60" cy="60" r="52"/><circle class="rv" id="ringV" cx="60" cy="60" r="52" pathLength="100" stroke-dasharray="0 100"/></svg>
+        <b class="num" id="kComp">&mdash;</b>
+      </div>
+      <div class="gtxt"><span class="lbl">Compliance</span><span class="foot">1 &minus; violators / persons</span></div>
+    </article>
+  </section>
+
+  <section class="panel feed" aria-label="Incident feed">
+    <header class="ph"><h2>Incident feed</h2><span class="tag mono" id="feedCount">0</span></header>
+    <div class="cards" id="cards" aria-live="polite" aria-relevant="additions"><div class="empty" id="empty"><b>All clear</b><span>No violations detected.</span></div></div>
+  </section>
+
+  <section class="panel tl" aria-label="Incidents per minute">
+    <header class="ph"><h2>Incidents per minute</h2><span class="tag mono" id="tlPeak">peak 0</span></header>
+    <svg id="tlSvg" viewBox="0 0 300 80" preserveAspectRatio="none" role="img" aria-label="Incidents per minute over the last 15 minutes"></svg>
+    <div class="axis mono"><span>-15 min</span><span>now</span></div>
+  </section>
+</main>
+
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="How it works">
+  <div class="dr-in">
+    <header class="ph"><h2>How it works</h2><button class="btn" id="drClose">Close</button></header>
+    <p class="lead">Everything on this screen is computed from real events. Only <b>metadata and evidence snapshots</b> leave the device &mdash; never the raw video stream.</p>
+    <ol class="pipe" id="pipe">
+      <li><b>Camera</b><span id="pSrc">&mdash;</span></li>
+      <li><b>Detector</b><span id="pModel">&mdash;</span></li>
+      <li><b>Tracker</b><span>persistent person ids</span></li>
+      <li><b>Rules</b><span>person without hard hat</span></li>
+      <li><b>MQTT / HTTP</b><span>JSON events + JPEG crops</span></li>
+      <li><b>This dashboard</b><span id="pFps">&mdash;</span></li>
+    </ol>
+    <h3>How it is measured</h3>
+    <ul class="how">
+      <li><b>Video FPS</b> is the measured arrival rate of annotated frames at this server (last 60 frames).</li>
+      <li><b>Inference FPS</b> is reported by the inference process, from its own timing.</li>
+      <li><b>Compliance</b> = (1 &minus; unique violators / unique persons) &times; 100.</li>
+      <li><b>Digital twin</b> maps each bounding box's bottom-centre to the floor plane and its height to person scale. It is a schematic projection, not a calibrated 3D position.</li>
+    </ul>
+    <h3>Live readout</h3>
+    <pre class="mono" id="drRaw">waiting for data</pre>
+  </div>
+</aside>
+
+<div class="lightbox" id="lb" role="dialog" aria-modal="true" aria-label="Incident evidence" hidden>
+  <div class="lb-in">
+    <button class="btn lb-x" id="lbClose">Close <kbd>Esc</kbd></button>
+    <div class="lb-img"><img id="lbImg" alt="Evidence snapshot"><div class="noimg" id="lbNo">No evidence snapshot</div></div>
+    <div class="lb-side"><h3 id="lbTitle"></h3><dl id="lbDl" class="mono"></dl><pre class="mono" id="lbRaw"></pre></div>
+  </div>
+</div>
+
+<script src="/static/vendor/three.min.js"></script>
+<script src="/static/twin.js"></script>
+<script src="/static/app.js"></script>
+<script src="/static/live.js"></script>
+</body>
+</html>

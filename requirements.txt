@@ -1,0 +1,5 @@
+ultralytics>=8.3
+onnx
+onnxslim
+onnxruntime-gpu  # use onnxruntime on CPU-only hosts
+opencv-python-headless
