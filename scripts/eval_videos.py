@@ -51,11 +51,13 @@ for c in clips:
         alerts += [{"t": round(idx / fps_in, 2), "track": e["track_id"], "label": e["label"]} for e in evs]
         ann = mon.annotations(n)
         people_frames += bool(ann); viol_frames += any(l for _, _, l in ann)
-        if any(abs(idx - p) < a.stride for p in picks) and len(sheet) < 12:
+        hit = next((p for p in picks if abs(idx - p) < a.stride), None)
+        if hit is not None:
+            picks.discard(hit)
             f = frame.copy()
             for x1, y1, x2, y2, name, s in dets:
                 if name != "Person":
-                    draw_box(f, x1, y1, x2, y2, (60, 60, 255) if name == "no_helmet" else (110, 220, 90), f"{name} {s:.0%}", thin=True)
+                    draw_box(f, x1, y1, x2, y2, (60, 60, 255) if name in ("no_helmet", "head") else (110, 220, 90), f"{name} {s:.0%}", thin=True)
             for (bx1, by1, bx2, by2), tid, labs in ann:
                 draw_box(f, int(bx1), int(by1), int(bx2), int(by2), (60, 60, 255) if labs else (110, 220, 90),
                          f"#{tid} " + ("NO HELMET" if NO_HELMET in labs else "OK"))

@@ -74,3 +74,9 @@ I reran the 3 clips with the most false alarms at `--stride 1`: night_roadwork, 
   `hit = next((p for p in picks if abs(idx - p) < a.stride), None)`
   `if hit is not None: picks.discard(hit); <draw panel>`
   The same issue makes stride-2 sheets under-sample the end of every clip.
+
+
+> **Correction (lead, after checking the training labels):** the model's `none` class is NOT a bare-head signal. In
+> construction-ppe, `none` boxes have median height 0.26 of the image centred mid-body (same footprint as `vest`), i.e.
+> they mark an unprotected torso ("no vest"). Using them for helmet violations would add false alarms, so the rules do
+> not. Bare-head recall will come from a model trained with an explicit `head` class (models/v2, in progress).

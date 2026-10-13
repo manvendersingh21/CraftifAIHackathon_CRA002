@@ -137,3 +137,9 @@ def test_helmeted_worker_never_flagged_over_long_run():
 
 def test_absence_rule_skips_person_cut_off_at_top_edge():
     assert run(PPEMonitor(), [[(100, 0, 200, 250, "Person", .9)]] * 60) == []   # head out of frame: cannot judge
+
+
+def test_v2_head_class_counts_as_bare_head():
+    head = lambda x, y: (x + 20, y, x + 80, y + 50, "head", 0.8)
+    ev = run(PPEMonitor(absence=0), [[P(100, 100), head(100, 100)]] * 10)
+    assert len(ev) == 1 and ev[0]["label"] == "no_helmet"

@@ -7,6 +7,7 @@ from dataclasses import dataclass, field
 
 PERSON = "Person"
 HELMET, NO_HELMET = "helmet", "no_helmet"
+BARE_HEAD = {"no_helmet", "head"}   # v1 model: no_helmet; v2 model: explicit bare "head" class
 VEST = "vest"
 
 
@@ -122,7 +123,7 @@ class PPEMonitor:
 
     def update(self, dets, frame):
         people = [d for d in dets if d[4] == PERSON]
-        bad = [d for d in dets if d[4] == NO_HELMET]
+        bad = [d for d in dets if d[4] in BARE_HEAD]
         vests = [d for d in dets if d[4] == VEST]
         ids = self.tracker.update([p[:4] for p in people], frame)
         out, self.new_persons = [], []
