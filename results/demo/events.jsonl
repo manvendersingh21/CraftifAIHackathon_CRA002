@@ -1,0 +1,12 @@
+{"@timestamp": "2026-10-16T02:55:12.404Z", "sensorId": "cam0", "frame_num": 0, "object": {"label": "Person", "tracker_id": 1, "confidence": 0.684, "bbox": [889, 146, 1106, 391]}, "frame_size": [1280, 726]}
+{"@timestamp": "2026-10-16T02:55:12.404Z", "sensorId": "cam0", "frame_num": 0, "object": {"label": "Person", "tracker_id": 2, "confidence": 0.497, "bbox": [237, 166, 308, 312]}, "frame_size": [1280, 726]}
+{"@timestamp": "2026-10-16T02:55:12.404Z", "sensorId": "cam0", "frame_num": 0, "object": {"label": "Person", "tracker_id": 3, "confidence": 0.371, "bbox": [367, 294, 515, 569]}, "frame_size": [1280, 726]}
+{"@timestamp": "2026-10-16T02:55:12.825Z", "sensorId": "cam0", "frame_num": 16, "object": {"label": "Person", "tracker_id": 4, "confidence": 0.423, "bbox": [110, 145, 175, 271]}, "frame_size": [1280, 726]}
+{"@timestamp": "2026-10-16T02:55:12.825Z", "sensorId": "cam0", "frame_num": 16, "object": {"label": "no_helmet", "tracker_id": 1, "confidence": 0.691, "bbox": [876, 134, 1091, 387]}, "frame_size": [1280, 726]}
+{"@timestamp": "2026-10-16T02:55:12.826Z", "sensorId": "cam0", "frame_num": 16, "object": {"label": "no_helmet", "tracker_id": 2, "confidence": 0.656, "bbox": [238, 167, 327, 317]}, "frame_size": [1280, 726]}
+{"@timestamp": "2026-10-16T02:55:14.015Z", "sensorId": "cam0", "frame_num": 58, "object": {"label": "Person", "tracker_id": 5, "confidence": 0.364, "bbox": [242, 170, 313, 284]}, "frame_size": [1280, 726]}
+{"@timestamp": "2026-10-16T02:55:16.700Z", "sensorId": "cam0", "frame_num": 166, "object": {"label": "no_helmet", "tracker_id": 1, "confidence": 0.725, "bbox": [871, 141, 1101, 385]}, "frame_size": [1280, 726]}
+{"@timestamp": "2026-10-16T02:55:18.561Z", "sensorId": "cam0", "frame_num": 236, "object": {"label": "Person", "tracker_id": 6, "confidence": 0.363, "bbox": [310, 269, 475, 551]}, "frame_size": [1280, 726]}
+{"@timestamp": "2026-10-16T02:55:20.281Z", "sensorId": "cam0", "frame_num": 300, "object": {"label": "no_helmet", "tracker_id": 6, "confidence": 0.62, "bbox": [321, 256, 483, 541]}, "frame_size": [1280, 726]}
+{"@timestamp": "2026-10-16T02:55:20.784Z", "sensorId": "cam0", "frame_num": 316, "object": {"label": "no_helmet", "tracker_id": 1, "confidence": 0.728, "bbox": [870, 126, 1101, 395]}, "frame_size": [1280, 726]}
+{"@timestamp": "2026-10-16T02:55:21.559Z", "sensorId": "cam0", "frame_num": 341, "object": {"label": "Person", "tracker_id": 7, "confidence": 0.422, "bbox": [367, 77, 694, 528]}, "frame_size": [1280, 726]}

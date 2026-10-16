@@ -3,14 +3,14 @@
   "stride": 2,
   "clips": [
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/mk_phone_call_yellow_helmet.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
+      "file": "mk_phone_call_yellow_helmet.mp4",
+      "provider": "Mixkit",
+      "license": "Mixkit Stock Video Free License",
+      "scene": "timber-frame construction site, medium close, daylight (stock)",
+      "helmets_expected": "all wearing",
       "frames_processed": 171,
       "stride": 2,
-      "detect_ms_median": 8.5,
+      "detect_ms_median": 14.8,
       "unique_persons": 1,
       "unique_violators": 0,
       "alerts": 0,
@@ -19,14 +19,51 @@
       "first_alerts": []
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/mk_two_builders_close.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
+      "file": "mk_timber_frame_workers.mp4",
+      "provider": "Mixkit",
+      "license": "Mixkit Stock Video Free License",
+      "scene": "timber-frame house interior, medium, dim (stock footage)",
+      "helmets_expected": "none wearing",
+      "frames_processed": 108,
+      "stride": 2,
+      "detect_ms_median": 14.8,
+      "unique_persons": 2,
+      "unique_violators": 2,
+      "alerts": 4,
+      "frames_with_people_pct": 100.0,
+      "frames_with_violation_pct": 94.4,
+      "first_alerts": [
+        {
+          "t": 0.58,
+          "track": 1,
+          "label": "no_helmet"
+        },
+        {
+          "t": 2.5,
+          "track": 2,
+          "label": "no_helmet"
+        },
+        {
+          "t": 6.83,
+          "track": 1,
+          "label": "no_helmet"
+        },
+        {
+          "t": 8.75,
+          "track": 2,
+          "label": "no_helmet"
+        }
+      ]
+    },
+    {
+      "file": "mk_two_builders_close.mp4",
+      "provider": "Mixkit",
+      "license": "Mixkit Stock Video Free License",
+      "scene": "bricklaying site, close-up, daylight (professional stock footage)",
+      "helmets_expected": "all wearing",
       "frames_processed": 190,
       "stride": 2,
-      "detect_ms_median": 8.2,
+      "detect_ms_median": 14.7,
       "unique_persons": 2,
       "unique_violators": 0,
       "alerts": 0,
@@ -35,59 +72,122 @@
       "first_alerts": []
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/mk_warehouse_white_helmet.mp4",
-      "error": "cannot open"
-    },
-    {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_abseil_tower_block.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
-      "frames_processed": 899,
+      "file": "wm_abseil_tower_block.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "scene": "organised abseil event down a residential tower block (London, UK), telephoto, overcast",
+      "helmets_expected": "all wearing",
+      "frames_processed": 900,
       "stride": 2,
-      "detect_ms_median": 8.7,
-      "unique_persons": 23,
+      "detect_ms_median": 15.0,
+      "unique_persons": 12,
       "unique_violators": 4,
       "alerts": 4,
-      "frames_with_people_pct": 98.6,
-      "frames_with_violation_pct": 5.3,
+      "frames_with_people_pct": 96.7,
+      "frames_with_violation_pct": 5.4,
       "first_alerts": [
         {
-          "t": 25.89,
+          "t": 3.27,
           "track": 2,
           "label": "no_helmet"
         },
         {
-          "t": 27.36,
-          "track": 5,
+          "t": 10.34,
+          "track": 3,
           "label": "no_helmet"
         },
         {
-          "t": 54.12,
-          "track": 17,
+          "t": 44.78,
+          "track": 4,
           "label": "no_helmet"
         },
         {
-          "t": 59.13,
-          "track": 18,
+          "t": 47.25,
+          "track": 8,
           "label": "no_helmet"
         }
       ]
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_asphalt_crew_street.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
-      "frames_processed": 611,
+      "file": "wm_apple_harvest_tyrol.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC0",
+      "scene": "apple harvest (South Tyrol, Italy), static elevated far view, daylight",
+      "helmets_expected": "none wearing",
+      "frames_processed": 247,
       "stride": 2,
-      "detect_ms_median": 10.0,
+      "detect_ms_median": 15.1,
+      "unique_persons": 10,
+      "unique_violators": 10,
+      "alerts": 12,
+      "frames_with_people_pct": 91.5,
+      "frames_with_violation_pct": 60.7,
+      "first_alerts": [
+        {
+          "t": 0.47,
+          "track": 1,
+          "label": "no_helmet"
+        },
+        {
+          "t": 0.47,
+          "track": 2,
+          "label": "no_helmet"
+        },
+        {
+          "t": 2.74,
+          "track": 3,
+          "label": "no_helmet"
+        },
+        {
+          "t": 3.4,
+          "track": 4,
+          "label": "no_helmet"
+        },
+        {
+          "t": 5.47,
+          "track": 1,
+          "label": "no_helmet"
+        },
+        {
+          "t": 5.54,
+          "track": 5,
+          "label": "no_helmet"
+        },
+        {
+          "t": 7.07,
+          "track": 6,
+          "label": "no_helmet"
+        },
+        {
+          "t": 10.28,
+          "track": 7,
+          "label": "no_helmet"
+        },
+        {
+          "t": 11.41,
+          "track": 8,
+          "label": "no_helmet"
+        },
+        {
+          "t": 12.48,
+          "track": 1,
+          "label": "no_helmet"
+        }
+      ]
+    },
+    {
+      "file": "wm_asphalt_crew_street.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "scene": "street asphalting (Budapest, Hungary), static far, strong blue colour cast",
+      "helmets_expected": "none wearing",
+      "frames_processed": 610,
+      "stride": 2,
+      "detect_ms_median": 15.1,
       "unique_persons": 13,
       "unique_violators": 8,
       "alerts": 9,
-      "frames_with_people_pct": 44.8,
+      "frames_with_people_pct": 44.9,
       "frames_with_violation_pct": 15.9,
       "first_alerts": [
         {
@@ -138,14 +238,14 @@
       ]
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_bamboo_scaffold_hk_a.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
+      "file": "wm_bamboo_scaffold_hk_a.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY-SA 3.0",
+      "scene": "bamboo scaffolding on high-rise (Hong Kong), telephoto, daylight",
+      "helmets_expected": "all wearing",
       "frames_processed": 358,
       "stride": 2,
-      "detect_ms_median": 10.2,
+      "detect_ms_median": 15.1,
       "unique_persons": 1,
       "unique_violators": 1,
       "alerts": 2,
@@ -165,18 +265,18 @@
       ]
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_bamboo_scaffold_hk_b.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
+      "file": "wm_bamboo_scaffold_hk_b.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY-SA 3.0",
+      "scene": "bamboo scaffolding on high-rise (Hong Kong), very high angle, daylight",
+      "helmets_expected": "all wearing",
       "frames_processed": 359,
       "stride": 2,
-      "detect_ms_median": 9.7,
-      "unique_persons": 7,
+      "detect_ms_median": 15.2,
+      "unique_persons": 6,
       "unique_violators": 4,
       "alerts": 5,
-      "frames_with_people_pct": 61.8,
+      "frames_with_people_pct": 61.6,
       "frames_with_violation_pct": 10.3,
       "first_alerts": [
         {
@@ -191,30 +291,30 @@
         },
         {
           "t": 17.92,
-          "track": 4,
+          "track": 3,
           "label": "no_helmet"
         },
         {
           "t": 24.92,
-          "track": 6,
+          "track": 5,
           "label": "no_helmet"
         },
         {
           "t": 25.92,
-          "track": 5,
+          "track": 4,
           "label": "no_helmet"
         }
       ]
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_bridge_site_far.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
+      "file": "wm_bridge_site_far.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY 3.0",
+      "scene": "stone bridge works (Tampere, Finland), static far view, winter sun",
+      "helmets_expected": "unknown/too far",
       "frames_processed": 750,
       "stride": 2,
-      "detect_ms_median": 9.0,
+      "detect_ms_median": 15.2,
       "unique_persons": 20,
       "unique_violators": 7,
       "alerts": 9,
@@ -269,227 +369,269 @@
       ]
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_concrete_pour_far.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
-      "frames_processed": 899,
+      "file": "wm_concrete_pour_far.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "scene": "construction site (London, UK), elevated medium-far then close, concrete pour, sunny",
+      "helmets_expected": "mixed",
+      "frames_processed": 900,
       "stride": 2,
-      "detect_ms_median": 10.1,
-      "unique_persons": 18,
-      "unique_violators": 12,
-      "alerts": 24,
-      "frames_with_people_pct": 96.4,
-      "frames_with_violation_pct": 64.5,
+      "detect_ms_median": 15.5,
+      "unique_persons": 17,
+      "unique_violators": 11,
+      "alerts": 20,
+      "frames_with_people_pct": 82.0,
+      "frames_with_violation_pct": 48.3,
       "first_alerts": [
         {
-          "t": 1.74,
+          "t": 3.87,
           "track": 2,
           "label": "no_helmet"
         },
         {
-          "t": 3.54,
-          "track": 3,
-          "label": "no_helmet"
-        },
-        {
-          "t": 5.27,
-          "track": 5,
-          "label": "no_helmet"
-        },
-        {
-          "t": 8.81,
-          "track": 3,
-          "label": "no_helmet"
-        },
-        {
-          "t": 8.81,
+          "t": 7.67,
           "track": 4,
           "label": "no_helmet"
         },
         {
-          "t": 12.81,
-          "track": 7,
+          "t": 12.68,
+          "track": 4,
           "label": "no_helmet"
         },
         {
-          "t": 15.62,
-          "track": 3,
-          "label": "no_helmet"
-        },
-        {
-          "t": 22.69,
-          "track": 9,
-          "label": "no_helmet"
-        },
-        {
-          "t": 22.89,
-          "track": 11,
-          "label": "no_helmet"
-        },
-        {
-          "t": 27.56,
-          "track": 12,
-          "label": "no_helmet"
-        }
-      ]
-    },
-    {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_construction_crane_far_a.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
-      "frames_processed": 899,
-      "stride": 2,
-      "detect_ms_median": 11.7,
-      "unique_persons": 25,
-      "unique_violators": 9,
-      "alerts": 14,
-      "frames_with_people_pct": 70.6,
-      "frames_with_violation_pct": 29.4,
-      "first_alerts": [
-        {
-          "t": 0.47,
-          "track": 1,
-          "label": "no_helmet"
-        },
-        {
-          "t": 0.47,
-          "track": 3,
-          "label": "no_helmet"
-        },
-        {
-          "t": 5.47,
-          "track": 1,
-          "label": "no_helmet"
-        },
-        {
-          "t": 6.74,
-          "track": 3,
-          "label": "no_helmet"
-        },
-        {
-          "t": 10.81,
-          "track": 1,
-          "label": "no_helmet"
-        },
-        {
-          "t": 11.75,
-          "track": 3,
-          "label": "no_helmet"
-        },
-        {
-          "t": 12.88,
+          "t": 13.68,
           "track": 6,
           "label": "no_helmet"
         },
         {
-          "t": 14.21,
+          "t": 17.68,
+          "track": 4,
+          "label": "no_helmet"
+        },
+        {
+          "t": 21.35,
           "track": 7,
           "label": "no_helmet"
         },
         {
-          "t": 25.09,
-          "track": 11,
+          "t": 23.56,
+          "track": 8,
           "label": "no_helmet"
         },
         {
-          "t": 26.76,
+          "t": 25.36,
+          "track": 10,
+          "label": "no_helmet"
+        },
+        {
+          "t": 28.83,
+          "track": 9,
+          "label": "no_helmet"
+        },
+        {
+          "t": 28.9,
+          "track": 8,
+          "label": "no_helmet"
+        }
+      ]
+    },
+    {
+      "file": "wm_construction_crane_far_a.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "scene": "construction site (London, UK), telephoto from elevated position, daylight, foliage occlusion",
+      "helmets_expected": "unknown/too far",
+      "frames_processed": 900,
+      "stride": 2,
+      "detect_ms_median": 15.5,
+      "unique_persons": 20,
+      "unique_violators": 10,
+      "alerts": 17,
+      "frames_with_people_pct": 74.8,
+      "frames_with_violation_pct": 37.6,
+      "first_alerts": [
+        {
+          "t": 14.01,
+          "track": 1,
+          "label": "no_helmet"
+        },
+        {
+          "t": 14.75,
+          "track": 2,
+          "label": "no_helmet"
+        },
+        {
+          "t": 15.48,
+          "track": 4,
+          "label": "no_helmet"
+        },
+        {
+          "t": 15.55,
+          "track": 3,
+          "label": "no_helmet"
+        },
+        {
+          "t": 19.02,
+          "track": 1,
+          "label": "no_helmet"
+        },
+        {
+          "t": 20.49,
+          "track": 4,
+          "label": "no_helmet"
+        },
+        {
+          "t": 24.49,
+          "track": 1,
+          "label": "no_helmet"
+        },
+        {
+          "t": 26.69,
+          "track": 4,
+          "label": "no_helmet"
+        },
+        {
+          "t": 29.5,
+          "track": 1,
+          "label": "no_helmet"
+        },
+        {
+          "t": 32.9,
           "track": 7,
           "label": "no_helmet"
         }
       ]
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_construction_far_b.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
-      "frames_processed": 899,
+      "file": "wm_construction_far_b.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "scene": "construction site (London, UK), telephoto very far, crane lifting wall panel, daylight",
+      "helmets_expected": "unknown/too far",
+      "frames_processed": 900,
       "stride": 2,
-      "detect_ms_median": 11.7,
-      "unique_persons": 8,
-      "unique_violators": 5,
-      "alerts": 5,
-      "frames_with_people_pct": 42.4,
-      "frames_with_violation_pct": 5.5,
+      "detect_ms_median": 15.7,
+      "unique_persons": 5,
+      "unique_violators": 1,
+      "alerts": 1,
+      "frames_with_people_pct": 9.7,
+      "frames_with_violation_pct": 0.8,
       "first_alerts": [
+        {
+          "t": 20.62,
+          "track": 1,
+          "label": "no_helmet"
+        }
+      ]
+    },
+    {
+      "file": "wm_crane_crew_close.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "scene": "tower-crane erection crew (London, UK), telephoto close, sky background",
+      "helmets_expected": "all wearing",
+      "frames_processed": 182,
+      "stride": 2,
+      "detect_ms_median": 15.8,
+      "unique_persons": 11,
+      "unique_violators": 3,
+      "alerts": 3,
+      "frames_with_people_pct": 100.0,
+      "frames_with_violation_pct": 20.9,
+      "first_alerts": [
+        {
+          "t": 8.07,
+          "track": 5,
+          "label": "no_helmet"
+        },
+        {
+          "t": 8.34,
+          "track": 3,
+          "label": "no_helmet"
+        },
+        {
+          "t": 12.01,
+          "track": 10,
+          "label": "no_helmet"
+        }
+      ]
+    },
+    {
+      "file": "wm_drystone_wall_azores.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "scene": "dry-stone wall building workshop (Lajes do Pico, Azores, Portugal), handheld, daylight",
+      "helmets_expected": "none wearing",
+      "frames_processed": 640,
+      "stride": 2,
+      "detect_ms_median": 15.9,
+      "unique_persons": 27,
+      "unique_violators": 20,
+      "alerts": 48,
+      "frames_with_people_pct": 100.0,
+      "frames_with_violation_pct": 99.8,
+      "first_alerts": [
+        {
+          "t": 0.07,
+          "track": 3,
+          "label": "no_helmet"
+        },
+        {
+          "t": 0.47,
+          "track": 2,
+          "label": "no_helmet"
+        },
         {
           "t": 0.73,
           "track": 1,
           "label": "no_helmet"
         },
         {
-          "t": 35.3,
-          "track": 2,
+          "t": 1.0,
+          "track": 4,
           "label": "no_helmet"
         },
         {
-          "t": 45.38,
+          "t": 4.54,
           "track": 6,
           "label": "no_helmet"
         },
         {
-          "t": 54.92,
-          "track": 8,
+          "t": 5.34,
+          "track": 7,
           "label": "no_helmet"
         },
         {
-          "t": 57.72,
-          "track": 4,
-          "label": "no_helmet"
-        }
-      ]
-    },
-    {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_crane_crew_close.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
-      "frames_processed": 182,
-      "stride": 2,
-      "detect_ms_median": 12.2,
-      "unique_persons": 10,
-      "unique_violators": 3,
-      "alerts": 4,
-      "frames_with_people_pct": 100.0,
-      "frames_with_violation_pct": 28.0,
-      "first_alerts": [
-        {
-          "t": 1.2,
+          "t": 5.47,
           "track": 2,
           "label": "no_helmet"
         },
         {
-          "t": 1.8,
-          "track": 3,
+          "t": 6.01,
+          "track": 4,
           "label": "no_helmet"
         },
         {
-          "t": 2.74,
-          "track": 9,
+          "t": 8.54,
+          "track": 8,
           "label": "no_helmet"
         },
         {
-          "t": 10.88,
-          "track": 9,
+          "t": 10.01,
+          "track": 1,
           "label": "no_helmet"
         }
       ]
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_excavator_operator.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
+      "file": "wm_excavator_operator.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY-SA 3.0",
+      "scene": "street works (Caleta de Fuste, Fuerteventura, Spain), static medium, bright sun",
+      "helmets_expected": "mixed",
       "frames_processed": 189,
       "stride": 2,
-      "detect_ms_median": 12.8,
+      "detect_ms_median": 15.8,
       "unique_persons": 7,
       "unique_violators": 4,
       "alerts": 6,
@@ -529,56 +671,41 @@
       ]
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_hoist_cage_far.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
+      "file": "wm_hoist_cage_far.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "scene": "building site (London, UK), telephoto on material hoist and deck, sunny",
+      "helmets_expected": "all wearing",
       "frames_processed": 750,
       "stride": 2,
-      "detect_ms_median": 10.5,
-      "unique_persons": 24,
-      "unique_violators": 5,
-      "alerts": 5,
-      "frames_with_people_pct": 78.9,
-      "frames_with_violation_pct": 7.6,
+      "detect_ms_median": 16.0,
+      "unique_persons": 14,
+      "unique_violators": 2,
+      "alerts": 2,
+      "frames_with_people_pct": 52.5,
+      "frames_with_violation_pct": 4.5,
       "first_alerts": [
         {
-          "t": 14.16,
+          "t": 34.16,
+          "track": 8,
+          "label": "no_helmet"
+        },
+        {
+          "t": 43.76,
           "track": 5,
-          "label": "no_helmet"
-        },
-        {
-          "t": 23.76,
-          "track": 2,
-          "label": "no_helmet"
-        },
-        {
-          "t": 42.32,
-          "track": 14,
-          "label": "no_helmet"
-        },
-        {
-          "t": 42.48,
-          "track": 13,
-          "label": "no_helmet"
-        },
-        {
-          "t": 44.88,
-          "track": 16,
           "label": "no_helmet"
         }
       ]
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_indoor_scaffold_lowres.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
+      "file": "wm_indoor_scaffold_lowres.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "scene": "scaffolding training in an indoor hall (France), handheld phone, dim, 568x320",
+      "helmets_expected": "all wearing",
       "frames_processed": 768,
       "stride": 2,
-      "detect_ms_median": 10.3,
+      "detect_ms_median": 17.0,
       "unique_persons": 0,
       "unique_violators": 0,
       "alerts": 0,
@@ -587,92 +714,20 @@
       "first_alerts": []
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_malta_site_high_angle.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
+      "file": "wm_malta_site_high_angle.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY-SA 3.0",
+      "scene": "landscaping/construction site (Mdina, Malta), elevated static view, overcast",
+      "helmets_expected": "mixed",
       "frames_processed": 750,
       "stride": 2,
-      "detect_ms_median": 11.1,
-      "unique_persons": 35,
-      "unique_violators": 19,
-      "alerts": 30,
-      "frames_with_people_pct": 99.2,
-      "frames_with_violation_pct": 76.1,
-      "first_alerts": [
-        {
-          "t": 0.56,
-          "track": 3,
-          "label": "no_helmet"
-        },
-        {
-          "t": 0.56,
-          "track": 1,
-          "label": "no_helmet"
-        },
-        {
-          "t": 1.84,
-          "track": 4,
-          "label": "no_helmet"
-        },
-        {
-          "t": 2.88,
-          "track": 10,
-          "label": "no_helmet"
-        },
-        {
-          "t": 4.72,
-          "track": 11,
-          "label": "no_helmet"
-        },
-        {
-          "t": 8.48,
-          "track": 4,
-          "label": "no_helmet"
-        },
-        {
-          "t": 10.08,
-          "track": 9,
-          "label": "no_helmet"
-        },
-        {
-          "t": 11.92,
-          "track": 11,
-          "label": "no_helmet"
-        },
-        {
-          "t": 15.6,
-          "track": 4,
-          "label": "no_helmet"
-        },
-        {
-          "t": 16.72,
-          "track": 9,
-          "label": "no_helmet"
-        }
-      ]
-    },
-    {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_malta_site_high_angle_b.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
-      "frames_processed": 450,
-      "stride": 2,
-      "detect_ms_median": 12.5,
+      "detect_ms_median": 16.0,
       "unique_persons": 43,
-      "unique_violators": 21,
-      "alerts": 28,
-      "frames_with_people_pct": 97.6,
-      "frames_with_violation_pct": 73.3,
+      "unique_violators": 26,
+      "alerts": 37,
+      "frames_with_people_pct": 98.8,
+      "frames_with_violation_pct": 74.7,
       "first_alerts": [
-        {
-          "t": 0.56,
-          "track": 1,
-          "label": "no_helmet"
-        },
         {
           "t": 0.56,
           "track": 3,
@@ -680,7 +735,7 @@
         },
         {
           "t": 0.56,
-          "track": 4,
+          "track": 6,
           "label": "no_helmet"
         },
         {
@@ -690,45 +745,117 @@
         },
         {
           "t": 1.92,
-          "track": 11,
-          "label": "no_helmet"
-        },
-        {
-          "t": 2.32,
-          "track": 13,
-          "label": "no_helmet"
-        },
-        {
-          "t": 3.12,
-          "track": 2,
-          "label": "no_helmet"
-        },
-        {
-          "t": 3.6,
-          "track": 14,
-          "label": "no_helmet"
-        },
-        {
-          "t": 3.92,
           "track": 12,
           "label": "no_helmet"
         },
         {
-          "t": 5.28,
-          "track": 10,
+          "t": 2.64,
+          "track": 15,
+          "label": "no_helmet"
+        },
+        {
+          "t": 4.8,
+          "track": 4,
+          "label": "no_helmet"
+        },
+        {
+          "t": 5.68,
+          "track": 13,
+          "label": "no_helmet"
+        },
+        {
+          "t": 6.56,
+          "track": 3,
+          "label": "no_helmet"
+        },
+        {
+          "t": 7.36,
+          "track": 7,
+          "label": "no_helmet"
+        },
+        {
+          "t": 7.44,
+          "track": 16,
           "label": "no_helmet"
         }
       ]
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_manhole_high_angle.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
+      "file": "wm_malta_site_high_angle_b.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY-SA 3.0",
+      "scene": "landscaping/construction site (Mdina, Malta), high angle, many workers",
+      "helmets_expected": "mixed",
+      "frames_processed": 450,
+      "stride": 2,
+      "detect_ms_median": 15.9,
+      "unique_persons": 37,
+      "unique_violators": 24,
+      "alerts": 41,
+      "frames_with_people_pct": 99.3,
+      "frames_with_violation_pct": 92.7,
+      "first_alerts": [
+        {
+          "t": 0.56,
+          "track": 2,
+          "label": "no_helmet"
+        },
+        {
+          "t": 0.56,
+          "track": 4,
+          "label": "no_helmet"
+        },
+        {
+          "t": 0.88,
+          "track": 3,
+          "label": "no_helmet"
+        },
+        {
+          "t": 1.36,
+          "track": 6,
+          "label": "no_helmet"
+        },
+        {
+          "t": 2.64,
+          "track": 7,
+          "label": "no_helmet"
+        },
+        {
+          "t": 3.76,
+          "track": 10,
+          "label": "no_helmet"
+        },
+        {
+          "t": 4.24,
+          "track": 11,
+          "label": "no_helmet"
+        },
+        {
+          "t": 5.2,
+          "track": 9,
+          "label": "no_helmet"
+        },
+        {
+          "t": 6.56,
+          "track": 2,
+          "label": "no_helmet"
+        },
+        {
+          "t": 6.56,
+          "track": 4,
+          "label": "no_helmet"
+        }
+      ]
+    },
+    {
+      "file": "wm_manhole_high_angle.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC0",
+      "scene": "street pipe repair (Kyiv, Ukraine), top-down from upper floor, CCTV-like, overcast",
+      "helmets_expected": "unknown/too far",
       "frames_processed": 189,
       "stride": 2,
-      "detect_ms_median": 11.0,
+      "detect_ms_median": 15.8,
       "unique_persons": 1,
       "unique_violators": 1,
       "alerts": 2,
@@ -748,14 +875,14 @@
       ]
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_manila_subway_visit.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
+      "file": "wm_manila_subway_visit.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "Public domain",
+      "scene": "construction site visit (Metro Manila, Philippines), handheld broadcast footage",
+      "helmets_expected": "mixed",
       "frames_processed": 709,
       "stride": 2,
-      "detect_ms_median": 11.5,
+      "detect_ms_median": 16.0,
       "unique_persons": 93,
       "unique_violators": 36,
       "alerts": 41,
@@ -815,19 +942,46 @@
       ]
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_night_roadwork_jp.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
-      "frames_processed": 187,
+      "file": "wm_mason_plastering_africa.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "scene": "mason plastering a concrete beam (Wiki Loves Africa 2024), handheld low angle, daylight",
+      "helmets_expected": "none wearing",
+      "frames_processed": 153,
       "stride": 2,
-      "detect_ms_median": 14.7,
+      "detect_ms_median": 16.3,
+      "unique_persons": 3,
+      "unique_violators": 2,
+      "alerts": 2,
+      "frames_with_people_pct": 22.9,
+      "frames_with_violation_pct": 14.4,
+      "first_alerts": [
+        {
+          "t": 5.61,
+          "track": 2,
+          "label": "no_helmet"
+        },
+        {
+          "t": 8.81,
+          "track": 3,
+          "label": "no_helmet"
+        }
+      ]
+    },
+    {
+      "file": "wm_night_roadwork_jp.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY-SA 3.0",
+      "scene": "night road work with jackhammer (Japan), static, floodlit",
+      "helmets_expected": "all wearing",
+      "frames_processed": 186,
+      "stride": 2,
+      "detect_ms_median": 16.1,
       "unique_persons": 7,
       "unique_violators": 3,
       "alerts": 4,
       "frames_with_people_pct": 100.0,
-      "frames_with_violation_pct": 63.6,
+      "frames_with_violation_pct": 63.4,
       "first_alerts": [
         {
           "t": 2.87,
@@ -852,14 +1006,14 @@
       ]
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_paving_worker_ru.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
+      "file": "wm_paving_worker_ru.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY 4.0",
+      "scene": "pavement tile works (Russia), vertical phone video through fence bars",
+      "helmets_expected": "none wearing",
       "frames_processed": 130,
       "stride": 2,
-      "detect_ms_median": 14.2,
+      "detect_ms_median": 16.1,
       "unique_persons": 2,
       "unique_violators": 1,
       "alerts": 1,
@@ -874,14 +1028,14 @@
       ]
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_prefab_house_assembly.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
+      "file": "wm_prefab_house_assembly.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY-SA 3.0",
+      "scene": "prefab house assembly (Europe), static elevated, time-lapse (not real-time), 640x512",
+      "helmets_expected": "mixed",
       "frames_processed": 750,
       "stride": 2,
-      "detect_ms_median": 11.0,
+      "detect_ms_median": 16.0,
       "unique_persons": 50,
       "unique_violators": 3,
       "alerts": 3,
@@ -906,76 +1060,165 @@
       ]
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_rebar_cage_workers.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
-      "frames_processed": 899,
+      "file": "wm_rebar_cage_workers.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "scene": "building site (London, UK), elevated medium-far, rebar/formwork, sunny",
+      "helmets_expected": "all wearing",
+      "frames_processed": 900,
       "stride": 2,
-      "detect_ms_median": 12.6,
-      "unique_persons": 25,
+      "detect_ms_median": 16.2,
+      "unique_persons": 20,
       "unique_violators": 5,
-      "alerts": 9,
-      "frames_with_people_pct": 99.8,
-      "frames_with_violation_pct": 21.7,
+      "alerts": 5,
+      "frames_with_people_pct": 100.0,
+      "frames_with_violation_pct": 5.8,
       "first_alerts": [
         {
-          "t": 20.82,
-          "track": 11,
+          "t": 2.4,
+          "track": 3,
           "label": "no_helmet"
         },
         {
-          "t": 36.84,
-          "track": 16,
+          "t": 2.4,
+          "track": 2,
           "label": "no_helmet"
         },
         {
-          "t": 48.45,
-          "track": 18,
+          "t": 27.36,
+          "track": 5,
           "label": "no_helmet"
         },
         {
-          "t": 48.92,
-          "track": 17,
+          "t": 40.91,
+          "track": 14,
           "label": "no_helmet"
         },
         {
-          "t": 53.59,
-          "track": 18,
-          "label": "no_helmet"
-        },
-        {
-          "t": 54.19,
-          "track": 17,
-          "label": "no_helmet"
-        },
-        {
-          "t": 55.19,
-          "track": 21,
-          "label": "no_helmet"
-        },
-        {
-          "t": 58.59,
-          "track": 18,
-          "label": "no_helmet"
-        },
-        {
-          "t": 59.26,
-          "track": 17,
+          "t": 56.86,
+          "track": 19,
           "label": "no_helmet"
         }
       ]
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_road_work_us_lowres.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
+      "file": "wm_road_crew_geogrid.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY 4.0",
+      "scene": "road construction laying geogrid (Moscow, Russia), vertical phone video through vehicle window",
+      "helmets_expected": "none wearing",
+      "frames_processed": 206,
+      "stride": 2,
+      "detect_ms_median": 15.5,
+      "unique_persons": 14,
+      "unique_violators": 6,
+      "alerts": 9,
+      "frames_with_people_pct": 100.0,
+      "frames_with_violation_pct": 59.2,
+      "first_alerts": [
+        {
+          "t": 0.47,
+          "track": 1,
+          "label": "no_helmet"
+        },
+        {
+          "t": 0.53,
+          "track": 3,
+          "label": "no_helmet"
+        },
+        {
+          "t": 0.67,
+          "track": 2,
+          "label": "no_helmet"
+        },
+        {
+          "t": 2.73,
+          "track": 4,
+          "label": "no_helmet"
+        },
+        {
+          "t": 5.67,
+          "track": 2,
+          "label": "no_helmet"
+        },
+        {
+          "t": 7.13,
+          "track": 5,
+          "label": "no_helmet"
+        },
+        {
+          "t": 8.27,
+          "track": 3,
+          "label": "no_helmet"
+        },
+        {
+          "t": 12.13,
+          "track": 12,
+          "label": "no_helmet"
+        },
+        {
+          "t": 13.2,
+          "track": 1,
+          "label": "no_helmet"
+        }
+      ]
+    },
+    {
+      "file": "wm_road_crew_kiosk.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY 4.0",
+      "scene": "urban road works (Russia), vertical phone video from passing car, daylight",
+      "helmets_expected": "mixed",
+      "frames_processed": 100,
+      "stride": 2,
+      "detect_ms_median": 15.8,
+      "unique_persons": 12,
+      "unique_violators": 6,
+      "alerts": 6,
+      "frames_with_people_pct": 52.0,
+      "frames_with_violation_pct": 37.0,
+      "first_alerts": [
+        {
+          "t": 3.47,
+          "track": 1,
+          "label": "no_helmet"
+        },
+        {
+          "t": 3.67,
+          "track": 2,
+          "label": "no_helmet"
+        },
+        {
+          "t": 3.93,
+          "track": 3,
+          "label": "no_helmet"
+        },
+        {
+          "t": 3.93,
+          "track": 7,
+          "label": "no_helmet"
+        },
+        {
+          "t": 4.07,
+          "track": 8,
+          "label": "no_helmet"
+        },
+        {
+          "t": 5.53,
+          "track": 10,
+          "label": "no_helmet"
+        }
+      ]
+    },
+    {
+      "file": "wm_road_work_us_lowres.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "Public domain",
+      "scene": "road chip-sealing (Grand Canyon NP, USA), handheld, native 320x240",
+      "helmets_expected": "mixed",
       "frames_processed": 800,
       "stride": 2,
-      "detect_ms_median": 14.2,
+      "detect_ms_median": 15.8,
       "unique_persons": 9,
       "unique_violators": 5,
       "alerts": 8,
@@ -1025,14 +1268,14 @@
       ]
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_scaffold_dismantling_fr.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
+      "file": "wm_scaffold_dismantling_fr.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY-SA 3.0",
+      "scene": "scaffold dismantling (Paris, France), static medium shot, daylight",
+      "helmets_expected": "mixed",
       "frames_processed": 750,
       "stride": 2,
-      "detect_ms_median": 17.3,
+      "detect_ms_median": 15.7,
       "unique_persons": 3,
       "unique_violators": 2,
       "alerts": 12,
@@ -1092,14 +1335,14 @@
       ]
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_skyway_inspection_ph.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
+      "file": "wm_skyway_inspection_ph.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "Public domain",
+      "scene": "road project ceremony (Metro Manila Skyway, Philippines), broadcast news footage, crowds",
+      "helmets_expected": "mixed",
       "frames_processed": 899,
       "stride": 2,
-      "detect_ms_median": 16.5,
+      "detect_ms_median": 16.1,
       "unique_persons": 79,
       "unique_violators": 31,
       "alerts": 46,
@@ -1159,14 +1402,14 @@
       ]
     },
     {
-      "file": "/Users/manubaba/Downloads/ppe-pipegen/data/videos/wm_welder_balcony_india.mp4",
-      "provider": null,
-      "license": null,
-      "scene": null,
-      "helmets_expected": "unknown",
+      "file": "wm_welder_balcony_india.mp4",
+      "provider": "Wikimedia Commons",
+      "license": "CC BY-SA 4.0",
+      "scene": "house construction (Bengaluru, India), low-angle handheld, daylight",
+      "helmets_expected": "none wearing",
       "frames_processed": 451,
       "stride": 2,
-      "detect_ms_median": 13.9,
+      "detect_ms_median": 15.8,
       "unique_persons": 1,
       "unique_violators": 1,
       "alerts": 6,
