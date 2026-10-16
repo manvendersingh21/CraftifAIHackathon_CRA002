@@ -50,6 +50,11 @@ def osd_probe(pad, info, _):
             elif om.class_id == CID["no_helmet"]:
                 bad.append(box)
             lo = lo.next
+        if fm.frame_num < 3:                           # diagnostic: what the probe actually receives
+            ids = []; x = fm.obj_meta_list
+            while x:
+                o = pyds.NvDsObjectMeta.cast(x.data); ids.append((o.class_id, o.object_id)); x = x.next
+            print(f"DIAG frame={fm.frame_num} objects={len(ids)} (class,object_id)={ids[:6]}", flush=True)
         now_bad = 0
         area = lambda b: max(0, b[2] - b[0]) * max(0, b[3] - b[1])
         helmetless = set()

@@ -9,9 +9,12 @@ Measured:
 - Output frame 100 contains about 1,448 saturated pixels in nvdsosd box colours, so boxes are drawn
 
 Not verified:
-- The probe reports persons=0, violators=0, alerts=0 and an empty ds_events.jsonl.
-  Likely causes, not yet tested: class ids from the parser do not match models/labels.txt,
-  or the object tracker gives UNTRACKED ids so the probe skips every person.
+- Diagnostic (frames 0-2): the probe receives 0 objects. The probe is not the cause.
+- The nvinfer engine loads ('Load new model ... success') with no parser error, but NvDsInferParseYolo
+  emits no objects. Most likely cause: the raw Ultralytics ONNX output [1,15,8400] does not match the
+  layout DeepStream-Yolo's NvDsInferParseYolo expects. The fix is to re-export with DeepStream-Yolo's
+  exporter (deepstream/PARSER_NOTES.md), rebuild the engine, and rerun. NOT yet done.
+- Earlier claim of drawn boxes was wrong: colour-matched pixels in the frame were not verified as nvdsosd boxes.
 - No NO HELMET results from DeepStream. The ONNX Runtime path produced the reported results.
 
 PipeGen: NOT run. Its launch check fails on CIS-A6000 (no docker group, no X session,
