@@ -1,4 +1,4 @@
-# Workplace Safety Sentinel — CraftifAI EMBEDDED SF · Track A: PipeGen
+# Workplace Safety Sentinel — CraftifAI EMBEDDED SF · Track A: PipeGen (PipeGen not run; see Limitations)
 
 > DRAFT. Every bracketed value (e.g. `[FPS_FP16]`) is a placeholder to be filled with numbers **measured on the
 > demo hardware** (`benchmark.py`, DeepStream perf logs, `trtexec`). Nothing here is a measured result yet.
@@ -9,7 +9,7 @@ Safety officers can't watch every camera all the time, and cloud video analytics
 privacy problems. Workplace Safety Sentinel runs PPE compliance detection **on the edge**, in real time, on existing
 cameras, and sends only small metadata events (no video) to a live dashboard.
 
-## Pipeline (generated with PipeGen; manual equivalents in `deepstream/`)
+## Pipeline (DeepStream configs in `deepstream/`; PipeGen generation was attempted but not run, see note)
 | Stage | Choice |
 |---|---|
 | **Inputs** | USB camera (`/dev/video0`, v4l2) or video file / RTSP (`samples/sample.mp4`) |
@@ -52,10 +52,11 @@ violators by tracker ID, and beeps + flashes the screen on each new violation.
 
 ## Demo (≈2 min)
 1. Problem framing (15 s).  2. Live camera / sample video with OSD: green PPE, red NO HELMET.  3. Dashboard: incident
-cards appear with beep/flash, unique-violator counter increments by tracker ID.  4. PipeGen pipeline graph.
+cards appear with beep/flash, unique-violator counter increments by tracker ID.  4. DeepStream pipeline graph from `deepstream/` (unverified on a GPU, see limitations).
 5. FP16 vs INT8 table.  6. Next steps.
 
 ## Limitations & next steps
+PipeGen: the PipeGen-generated pipeline was **not** run. Its VM host was unreachable during the build, so the DeepStream path is the manual config in `deepstream/`, which has not been executed on a GPU yet.
 Small dataset ([N_TRAIN] train images); `no_vest` is not a class in construction-ppe (vest rule = Person without
 overlapping vest box); YOLOv8 in DeepStream needs the DeepStream-Yolo custom parser (`deepstream/PARSER_NOTES.md`).
 Next: zone rules (hard-hat areas only), Slack/SMS alerts, face-blurred evidence clips, multi-camera Jetson deployment.
